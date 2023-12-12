@@ -4,7 +4,7 @@ We will build a demo web application to perform apparel search based on user inp
 The data that contributes to the inventory of the apparel search is stored in Spanner. We will invoke the Vertex AI Embeddings API in the ML.PREDICT construct directly from Spanner data. There is a dataflow job that bulk uploads this data (inventory and embeddings) into the Vertex AI’s Vector Search database and refreshes the index. When a user enters an apparel description, the app generates the embeddings in realtime using the Text Embeddings api. This is then sent as input to the Vector Search API to find 10 relevant product descriptions from the index and displays the corresponding image. 
 
 ## The architecture of the Spanner-Vertex Vector Search application is shown in the following diagram:
-![Alt text](data files/arch.JPG?raw=true "Title")
+![alt text](/data files/arch.JPG?raw=true "Title")
 
 The application consists of three main components:
 A web application that allows users to enter text descriptions of apparel.
@@ -62,10 +62,13 @@ Now that the bulk content and embeddings are ready, let us create a Vector Searc
 ## Create a Cloud Storage [Bucket]([url](https://cloud.google.com/storage/docs/creating-buckets))
 This is required to store embeddings from Spanner in a GCS bucket in a json format that Vector Search expects as input. Create a bucket in the same region as your data in Spanner. Create a folder inside if required, but mainly create an empty file called empty.json in it.
 
-## Create an [index]([url](https://cloud.google.com/vertex-ai/docs/vector-search/create-manage-index#create-index)https://cloud.google.com/vertex-ai/docs/vector-search/create-manage-index#create-index)
+## Create an index
+https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/main/embeddings/vector-search-quickstart.ipynb
 
 ## Create workflow to export embeddings from Spanner to Vector Search
 
 ## Deploy index to an endpoint
+https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/main/embeddings/vector-search-quickstart.ipynb
 
 ## Finally invoke the  Vector Search api to run similarity search for your input text
+Refer to spanner-vector-search.ipynb file
