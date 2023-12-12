@@ -1,5 +1,5 @@
 # spanner-vertex-search
-Project that demonstrates how to implement Vector Search with data from Spanner database, while demonstrating the implementation of batch data export from Spanner database to Vector Search database and indexes. We will also build a demo web application to perform apparel search based on user input text. The application allows users to search for apparel by entering a text description.
+We will build a demo web application to perform apparel search based on user input text. The application allows users to search for apparel by entering a text description. This project demonstrates how to implement Vector Search with data from Spanner database, while demonstrating the implementation of batch data export from Spanner database to Vector Search database and indexes. We will also build a demo web application to perform apparel search based on user input text. The application allows users to search for apparel by entering a text description.
 
 The data that contributes to the inventory of the apparel search is stored in Spanner. We will invoke the Vertex AI Embeddings API in the ML.PREDICT construct directly from Spanner data. There is a dataflow job that bulk uploads this data (inventory and embeddings) into the Vertex AI’s Vector Search database and refreshes the index. When a user enters an apparel description, the app generates the embeddings in realtime using the Text Embeddings api. This is then sent as input to the Vector Search API to find 10 relevant product descriptions from the index and displays the corresponding image. 
 
@@ -64,8 +64,8 @@ This is required to store embeddings from Spanner in a GCS bucket in a json form
 
 ## Create an [index]([url](https://cloud.google.com/vertex-ai/docs/vector-search/create-manage-index#create-index)https://cloud.google.com/vertex-ai/docs/vector-search/create-manage-index#create-index)
 
-## Create workflow to export your data from Spanner to Vector Search
+## Create workflow to export embeddings from Spanner to Vector Search
 
-## Deploy your index to an endpoint
+## Deploy index to an endpoint
 
 ## Finally invoke the  Vector Search api to run similarity search for your input text
