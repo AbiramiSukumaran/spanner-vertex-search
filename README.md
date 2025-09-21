@@ -25,6 +25,7 @@ CREATE TABLE
     sub_category STRING(50),
     uri STRING(200),
     content STRING(2000),
+	image STRING(200),
     embedding ARRAY<FLOAT64>
     )
 PRIMARY KEY
